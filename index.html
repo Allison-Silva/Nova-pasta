@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede de Apoio - Combate à Violência Doméstica</title>
+    <style>
+        /* Reset e Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .emergency {
+            background-color: #d32f2f;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #8e24aa;
+        }
+        
+        /* Banner Hero */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.freepik.com/fotos-gratis/mulher-com-uma-mao-linda-tocando-a-janela_53876-96920.jpg?t=st=1746827581~exp=1746831181~hmac=07da56b35e1a4b8f27603b2355a5b9545820b392a24c5882cbd2d759b7229ff4&w=996');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #6a1b9a;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: #6a1b9a;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Seções */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #6a1b9a;
+            font-size: 2rem;
+        }
+        
+        /* Recursos Imediatos */
+        .resources {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #6a1b9a;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .exit-button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">Rede de Apoio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#" class="emergency">SOS Emergência</a></li>
+                <li><a href="diretos.html">Direitos da Vítima</a></li>
+                <li><a href="#" onclick="denunciaFocus()">Como denunciar</a></button>
+                <li><a href="campanha.html">Importancia do combate a violencia</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Banner Hero -->
+    <section class="hero">
+        <h1>Você não está sozinha. Ajuda está a um clique.</h1>
+        <div class="hero-buttons">
+            <a href="#emergency" class="btn btn-primary">Preciso de Ajuda Agora</a>
+            <a href="#info" class="btn btn-secondary">Quero Aprender Mais</a>
+        </div>
+    </section>
+    
+    <!-- Recursos Imediatos -->
+    <section class="section" id="emergency">
+        <h2 class="section-title">Recursos Imediatos</h2>
+        <div class="resources">
+            <div class="resource-card">
+                <div class="resource-icon">📞</div>
+                <h3>Telefones Úteis</h3>
+                <p>Disque 180 (Central de Atendimento à Mulher)</p>
+                <p>190 (Polícia Militar)</p>
+                <p>Disque 100 (Direitos Humanos)</p>
+            </div>
+        
+            <div class="resource-card">
+                <div class="resource-icon">🗺️</div>
+                <h3>Passo a passo</h3>
+                <p>Guia passo a passo para sair de situações de risco com segurança.</p>
+                <a href="#" class="btn btn-primary">Ver Passo a passo</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações Essenciais -->
+    <section class="section" id="info">
+        <h2 class="section-title">Informações Essenciais</h2>
+        <div style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="color: #6a1b9a; margin-bottom: 1rem;">O que é violência doméstica?</h3>
+            <p>A violência doméstica pode se manifestar de várias formas:</p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Física (bater, empurrar, agredir com objetos)</li>
+                <li>Psicológica (humilhação, ameaças, controle excessivo)</li>
+                <li>Sexual (relação forçada, abuso)</li>
+                <li>Patrimonial (destruição de documentos, controle financeiro abusivo)</li>
+                <li>Moral (calúnia, difamação)</li>
+            </ul>
+            
+            <h3 style="color: #6a1b9a; margin: 2rem 0 1rem;">Ciclo da Violência</h3>
+            <p>A violência doméstica geralmente ocorre em ciclos que incluem:</p>
+            <ol style="margin: 1rem 0 1rem 2rem;">
+                <li>Tensão crescente</li>
+                <li>Episódio violento</li>
+                <li>Lua-de-mel (arrependimento aparente)</li>
+                <li>Retorno à calma (até o próximo ciclo)</li>
+            </ol>
+        </div>
+    </section>
+    
+    <!-- Como Denunciar -->
+    <section class="section" id="denuncia">
+        <h2 class="section-title">Como Denunciar</h2>
+        <div style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="color: #6a1b9a; margin-bottom: 1rem;">Passo a Passo para Denúncia</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h4 style="color: #d32f2f;">1. Onde ir</h4>
+                    <p>Delegacias da Mulher ou qualquer delegacia comum</p>
+                    <p>Defensorias Públicas</p>
+                    <p>Ministério Público</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h4 style="color: #d32f2f;">2. Provas úteis</h4>
+                    <p>Fotos de lesões</p>
+                    <p>Mensagens ameaçadoras</p>
+                    <p>Laudos médicos</p>
+                    <p>Relatos de testemunhas</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h4 style="color: #d32f2f;">3. Proteção pós-denúncia</h4>
+                    <p>Medidas protetivas</p>
+                    <p>Acompanhamento psicológico</p>
+                    <p>Abrigos temporários</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+        </div>
+    </section>
+    
+    <!-- Rodapé -->
+    <footer> 
+        <p style="margin: 1rem 0;">Este site pode ser apagado do seu histórico pressionando o botão abaixo:</p>
+        <button class="exit-button">Sair Rápido</button>
+        
+        <p style="margin-top: 2rem;">Cuidado: histórico de navegação pode ser rastreado. Recomendamos usar modo anônimo.</p>
+    </footer>
+    
+    <script>
+        // Botão de saída rápida
+        document.querySelector('.exit-button').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com';
+        });
+
+        document.querySelector('.emergency').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com/search?q=delegacia+da+mulher';
+        });
+        
+        
+        // Lembrete de segurança
+        window.onload = function() {
+            if(!window.sessionStorage.getItem('safeWarningShown')) {
+                alert('Importante: Se você está em perigo, limpe seu histórico de navegação após usar este site.');
+                window.sessionStorage.setItem('safeWarningShown', 'true');
+            }
+        };
+        
+        function denunciaFocus() {
+            console.log('rodando')
+            const element = document.getElementById('denuncia').scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    </script>
+</body>
+</html>

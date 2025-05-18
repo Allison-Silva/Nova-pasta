@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede de Apoio - Combate à Violência Doméstica</title>
+    <style>
+        /* Reset e Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .emergency {
+            background-color: #d32f2f;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #8e24aa;
+        }
+
+        /* Banner Hero */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/fotos-gratis/mulher-com-uma-mao-linda-tocando-a-janela_53876-96920.jpg?t=st=1746827581~exp=1746831181~hmac=07da56b35e1a4b8f27603b2355a5b9545820b392a24c5882cbd2d759b7229ff4&w=996');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #6a1b9a;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #6a1b9a;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Seções */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #6a1b9a;
+            font-size: 2rem;
+        }
+
+        /* Recursos Imediatos */
+        .resources {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #6a1b9a;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .exit-button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                margin: 0;
+            }
+        }
+
+        .padding-left-35 {
+            padding-left: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">Rede de Apoio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#" class="emergency">SOS Emergência</a></li>
+                <li><a href="diretos.html">Direitos da Vítima</a></li>
+                <li><a href="campanha.html">Importancia do combate a violencia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="hero">
+        <h1>Você não está sozinha. Ajuda está a um clique.</h1>
+    </section>
+
+    <!-- Informações Essenciais -->
+    <section class="section" id="info">
+        <h2 class="section-title">Diretos da vítima</h2>
+        <div style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <p>A Lei Maria da Penha estabelece que toda mulher tem direito à proteção social e do Estado inclusive contra
+            atos de violência sofridos no ambiente privado ou intrafamiliar (veja mais na seção sobre Violência
+            Doméstica e Familiar).
+            Nos casos de violência doméstica (física, psicológica, moral, patrimonial ou sexual) a mulher tem direito a:
+        </p>
+        <br />
+        <ul class="padding-left-35">
+            <li>medidas protetivas de urgência que podem consistir na proibição de aproximação do agressor;</li>
+            <li>acesso prioritário a programas sociais, habitacionais e de emprego e renda;</li>
+            <li>manutenção do vínculo profissional por até seis meses de afastamento do trabalho;</li>
+            <li>escolta policial para retirar bens da residência, se necessário;</li>
+            <li>atendimento de saúde e psicossocial especializado e continuado, se necessário;</li>
+            <li>registro do boletim de ocorrência;</li>
+            <li>registro detalhado do relato que fizer em qualquer órgão público (inclusive para evitar a
+                revitimização
+                com a necessidade de contar a história repetidas vezes);</li>
+            <li>notificação formal da violência sofrida ao Ministério da Saúde, para fins de produção de dados
+                estatísticos e políticas públicas;</li>
+            <li>atendimento judiciário na região de seu domicílio ou residência, no lugar onde ocorreu a agressão
+                (se
+                este for diferente) ou no domicílio do agressor;</li>
+            <li>assistência judiciária da Defensoria Pública, independentemente de seu nível de renda;</li>
+            <li>acesso a casa abrigo e outros serviços de acolhimento especializado (DEAM, Defensoria Pública,
+                centros
+                de referência etc.);</li>
+            <li>informações sobre direitos e todos os serviços disponíveis.</li>
+        </ul>
+        </div>
+    </section>
+
+    <!-- Informações Essenciais -->
+    <section class="section" id="info">
+        <h2 class="section-title">Penalidades para o agressor</h2>
+        <div style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+             <p>
+            A Lei Maria da Penha (Lei nº 11.340/2006) estabelece um conjunto de medidas legais para combater a violência
+            doméstica e familiar contra a mulher no Brasil. As penalidades para os agressores variam conforme a
+            gravidade do ato cometido e podem incluir:
+        </p>
+        <br />
+
+        <p style="font-weight: bold;">1. Penas Criminais</p>
+        <ul class="padding-left-35">
+            <li>Lesão corporal (Art. 129, §9º do Código Penal): A pena varia de 3 meses a 3 anos de detenção.</li>
+            <li>Ameaça (Art. 147 do Código Penal): A pena pode ser de 1 a 6 meses de prisão ou multa.</li>
+            <li>Violência psicológica (Art. 147-B do Código Penal): A pena é de 6 meses a 2 anos de detenção.</li>
+        </ul>
+        <br />
+
+        <p style="font-weight: bold;">2. Medidas Protetivas de Urgência</p>
+        <ul class="padding-left-35">
+            <li>Afastamento do agressor do lar.</li>
+            <li>Proibição de aproximação ou contato com a vítima.</li>
+            <li>Suspensão do porte de armas.</li>
+            <li>Comparecimento obrigatório a programas de reeducação.</li>
+        </ul>
+        <br />
+        <p style="font-weight: bold;">3. Programas de Reeducação</p>
+        <ul class="padding-left-35">
+            <li>O agressor pode ser obrigado a frequentar programas de recuperação e reeducação, com o objetivo de
+                modificar comportamentos violentos. Esses programas podem ser aplicados como medida protetiva ou como
+                parte da pena.</li>
+        </ul>
+        <br />
+        <p style="font-weight: bold;">4. Impedimentos Adicionais</p>
+        <ul class="padding-left-35">
+            <li>Conforme alterações legislativas recentes, condenados por crimes como lesão corporal ou ameaça contra a
+                mulher por razões de gênero podem ficar impedidos de exercer funções públicas ou cargos eletivos até o
+                cumprimento total da pena. </li>
+        </ul>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p style="margin: 1rem 0;">Este site pode ser apagado do seu histórico pressionando o botão abaixo:</p>
+        <button class="exit-button">Sair Rápido</button>
+
+        <p style="margin-top: 2rem;">Cuidado: histórico de navegação pode ser rastreado. Recomendamos usar modo anônimo.
+        </p>
+    </footer>
+
+    <script>
+        // Botão de saída rápida
+        document.querySelector('.exit-button').addEventListener('click', function () {
+            window.location.href = 'https://www.google.com';
+        });
+
+        window.onload = function () {
+            const element = document.getElementById('info').scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    </script>
+</body>
+
+</html>
